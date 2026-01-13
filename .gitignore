@@ -1,0 +1,24 @@
+.DS_Store
+*.log
+
+# Node artifacts
+node_modules/
+**/node_modules/
+.next/
+web/.next/
+
+# Strapi build artifacts
+cms/.tmp/
+cms/dist/
+
+# Env files
+.env
+.env.*
+web/.env.local
+cms/.env
+
+# Turbopack/Windows path artifacts
+web/G??Projetos/
+
+# Content drafts
+post*.json

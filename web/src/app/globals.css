@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-sand: #f4f0e8;
+  --color-wine: #731a5b;
+  --color-terracotta: #0f3b66;
+  --color-ink: #0f3b66;
+  --color-gold: #e5c72e;
+  --color-paper: #f4f0e8;
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: #f4f0e8;
+    color: #0f3b66;
+    font-family: var(--font-body), sans-serif;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-16 md:py-24;
+  }
+
+  .section-title {
+    font-family: var(--font-display), serif;
+    @apply text-3xl md:text-4xl text-ink;
+  }
+
+  .section-lead {
+    @apply text-base md:text-lg text-ink/80;
+  }
+
+  .blog-content {
+    @apply max-w-none text-ink/80;
+  }
+
+  .blog-content h2 {
+    font-family: var(--font-display), serif;
+    @apply mt-8 text-2xl text-ink;
+  }
+
+  .blog-content h3 {
+    font-family: var(--font-display), serif;
+    @apply mt-6 text-xl text-ink;
+  }
+
+  .blog-content p {
+    @apply mt-4 leading-relaxed;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    @apply mt-4 space-y-2 pl-6;
+  }
+
+  .blog-content li {
+    @apply text-ink/80;
+  }
+}
