@@ -30,6 +30,16 @@ const modules = [
     cta: "Quero dominar as bases",
   },
   {
+    title: "A Arte da Leitura: Escuta, Clareza e Condução Ética da Leitura",
+    price: "R$ 197",
+    summary: [
+      "Escuta ativa e presença no atendimento",
+      "Boas perguntas para leituras claras",
+      "Condução ética, segura e consciente",
+    ],
+    cta: "Quero aprender a conduzir leituras",
+  },
+  {
     title: "Módulo 4 - Os 78 Espelhos",
     price: "R$ 297",
     summary: [

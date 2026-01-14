@@ -63,4 +63,8 @@
   .blog-content li {
     @apply text-ink/80;
   }
+
+  .header-hero {
+    background-color: #731a5b;
+  }
 }

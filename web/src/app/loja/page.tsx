@@ -1,8 +1,8 @@
-const productGroups = [
+﻿const productGroups = [
   {
-    title: "Cursos Hotmart",
+    title: "Cursos Modulares",
     description:
-      "Landing pages no site com acesso direto para o checkout Hotmart.",
+      "Os cursos do Oraculista de Delfos foram organizados em modulos independentes para tornar o aprendizado mais acessivel, flexivel e alinhado as necessidades de cada pessoa.",
     items: [
       "Modulo 1 - O Chamado do Louco",
       "Modulo 2 - A Vida em Movimento",
@@ -12,25 +12,25 @@ const productGroups = [
   {
     title: "Livros didaticos",
     description:
-      "PDF na Hotmart e versoes fisica/Kindle pela Amazon KDP.",
+      "Livro didatico como apoio aos cursos, com fundamentos e consulta rapida. Disponivel em PDF e versao fisica.",
     items: ["Livro didatico", "Caderno de exercicios", "Guia rapido"],
   },
   {
     title: "Tarot para colorir",
     description:
-      "PDF na Hotmart e impressos via Amazon KDP.",
+      "Colorir aprofunda o estudo e a conexao com os simbolos. Ideal para quem aprende pela experiencia visual.",
     items: ["Arcanos Maiores", "Arcanos Menores", "Colecao completa"],
   },
   {
-    title: "Afiliados e recomendacoes",
+    title: "Produtos EsotÃ©ricos",
     description:
-      "Velas, baralhos e itens esotericos com link direto nas lojas parceiras.",
+      "Curadoria de itens esotericos com criterio e afinidade simbolica. Compras em lojas parceiras, com apoio ao projeto.",
     items: ["Velas ritualisticas", "Baralhos especiais", "Cristais"],
   },
   {
-    title: "Print on demand",
+    title: "Produtos Personalizados",
     description:
-      "Produtos personalizados com producao e envio pela plataforma.",
+      "Camisetas, canecas e posters com motivos simbolicos para o dia a dia. Uma forma simples de expressar identidade e significado.",
     items: ["Camisetas", "Canecas", "Cadernos"],
   },
 ];
@@ -87,3 +87,5 @@ export default function LojaPage() {
     </div>
   );
 }
+
+

@@ -26,6 +26,11 @@ services:
       DATABASE_USERNAME: oraculista
       DATABASE_PASSWORD: oraculista
       DATABASE_SSL: "false"
+      ADMIN_JWT_SECRET: "0ph7Tu1axZco3jm82nszrCEWevSLJ5RYMAq4tVDyIgNfFbPdk6iOKHlUXQw9BG"
+      API_TOKEN_SALT: "TYnqNGKgMr21ZHWXV53bRLEOmSwaz9vUsIfydi0DQoltpej8FBcukxhC4JAP67"
+      TRANSFER_TOKEN_SALT: "78Mmv2Vb5jdoIiYfFUcKJqlBQLwPxpS6ZrDGWHRn9EXyhO1g0Aats3CT4eNuzk"
+      ENCRYPTION_KEY: "QbUToRrf95K6Yj8wW1Zq4msNB0lecC3tiJyMApDvFkIXgdPznGuxahES2HOL7V"
+      APP_KEYS: "0ph7Tu1axZco3jm82nszrCEWevSLJ5RYMAq4tVDyIgNfFbPdk6iOKHlUXQw9BG,TYnqNGKgMr21ZHWXV53bRLEOmSwaz9vUsIfydi0DQoltpej8FBcukxhC4JAP67,78Mmv2Vb5jdoIiYfFUcKJqlBQLwPxpS6ZrDGWHRn9EXyhO1g0Aats3CT4eNuzk,QbUToRrf95K6Yj8wW1Zq4msNB0lecC3tiJyMApDvFkIXgdPznGuxahES2HOL7V"
       NODE_ENV: development
     volumes:
       - ./cms:/srv/app

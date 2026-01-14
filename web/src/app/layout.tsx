@@ -17,12 +17,12 @@ const bodyFont = Libre_Franklin({
 export const metadata: Metadata = {
   title: "Oraculista de Delfos",
   description:
-    "Tarot e cartomancia com foco em autoconhecimento, cursos e atendimentos.",
+    "Conhecimento esotérico aplicado ao autoconhecimento, com cursos, estudos e conteúdos simbólicos.",
   metadataBase: new URL("https://oraculistadedelfos.com.br"),
   openGraph: {
     title: "Oraculista de Delfos",
     description:
-      "Tarot, cursos e leituras para mulheres que querem clareza e direcao.",
+      "Tarot, cursos e leituras para pessoas que querem clareza e direcao.",
     url: "https://oraculistadedelfos.com.br",
     siteName: "Oraculista de Delfos",
     locale: "pt_BR",
