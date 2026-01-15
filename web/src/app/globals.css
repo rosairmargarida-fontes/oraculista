@@ -65,6 +65,19 @@
   }
 
   .header-hero {
-    background-color: #731a5b;
+    background-image: linear-gradient(
+        180deg,
+        rgba(115, 26, 91, 0.7),
+        rgba(115, 26, 91, 0.7)
+      ),
+      url("/capaoraculistadelfos.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .header-hero,
+  .header-hero a,
+  .header-hero p {
+    color: #ffffff;
   }
 }

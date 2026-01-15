@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { fetchPosts, getMediaUrl } from "@/lib/strapi";
 
 const fallbackPosts = [
@@ -38,38 +38,6 @@ export default async function Home() {
 
   return (
     <div className="bg-sand text-ink">
-      <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <img
-              src="/oraculista-logo.jpg"
-              alt="Oraculista de Delfos"
-              className="h-10 w-10 rounded-full border border-ink/20 bg-paper object-cover"
-            />
-            <div>
-              <p className="font-display text-lg">Oraculista de Delfos</p>
-              <p className="text-xs uppercase tracking-[0.3em] text-ink/60">
-                Taro, cursos e loja
-              </p>
-            </div>
-          </div>
-          <nav className="flex flex-wrap items-center gap-6 text-sm font-semibold">
-            <a href="#cursos" className="hover:text-wine">
-              Cursos
-            </a>
-            <a href="#produtos" className="hover:text-wine">
-              Produtos
-            </a>
-            <a href="/loja" className="hover:text-wine">
-              Loja
-            </a>
-            <a href="#blog" className="hover:text-wine">
-              Blog
-            </a>
-          </nav>
-        </div>
-      </header>
-
       <main>
         <section className="relative overflow-hidden">
           <div className="absolute inset-0 bg-glow opacity-60"></div>
@@ -89,7 +57,7 @@ export default async function Home() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="/curso"
+                  href="/modulos"
                   className="rounded-full bg-wine px-6 py-3 text-sm font-semibold text-sand shadow-soft hover:bg-terracotta"
                 >
                   Comecar minha jornada
@@ -148,7 +116,7 @@ export default async function Home() {
             <div className="flex flex-col gap-6">
               <div className="space-y-3">
                 <h2 className="font-display text-3xl md:text-4xl">
-                  Cursos modulares na Hotmart
+                  Módulos Disponíveis
                 </h2>
                 <p className="text-sand/80">
                   Os cursos do Oraculista de Delfos foram organizados em
@@ -176,7 +144,7 @@ export default async function Home() {
                 </p>
               </div>
               <a
-                href="/curso"
+                href="/modulos"
                 className="self-start rounded-full border border-sand/40 px-5 py-2 text-sm font-semibold text-sand hover:border-gold hover:text-gold"
               >
                 Conhecer o Curso Completo
@@ -257,19 +225,39 @@ export default async function Home() {
               {[
                 {
                   title: "Cartas de Tarot para colorir",
-                  body: "O Cartas de Tarot para Colorir convida voce a desacelerar e se conectar com os simbolos de forma criativa e intuitiva. Ao colorir cada carta, o estudo se torna mais profundo, favorecendo a memorizacao, a contemplacao e a compreensao dos arquetipos. E um material complementar aos cursos e livros didaticos, ideal para quem aprende melhor pela experiencia visual e pelo contato direto com as imagens. Um convite simples para transformar estudo em presenca e reflexao.",
+                  body: [
+                    "Estudo pratico e intuitivo",
+                    "Memorizacao dos simbolos",
+                    "Foco e presenca",
+                    "Apoio aos cursos",
+                  ],
                 },
                 {
-                  title: "Livro Didático de Tarot",
-                  body: "O Livro Didatico de Tarot foi criado para quem busca estudar com clareza, seguranca e profundidade. Ele reune os fundamentos, a estrutura do Tarot e a leitura dos simbolos de forma organizada e facil de consultar, funcionando como apoio essencial aos cursos do Oraculista de Delfos. Enquanto as aulas conduzem o aprendizado, o livro permanece como referencia constante para revisoes, duvidas e praticas. Um material que economiza tempo, reduz insegurancas e transforma conhecimento em confianca aplicada.",
+                  title: "Livro Didatico de Tarot",
+                  body: [
+                    "Fundamentos bem organizados",
+                    "Consulta rapida",
+                    "Revisoes objetivas",
+                    "Apoio aos cursos",
+                  ],
                 },
                 {
-                  title: "Produtos Esotéricos",
-                  body: "Nossa curadoria de produtos esotericos reune livros, baralhos, velas, amuletos e outros itens selecionados com criterio, qualidade e afinidade com o universo simbolico do Oraculista de Delfos. Indicamos apenas produtos que dialogam com estudo, pratica consciente e significado. As compras sao realizadas em lojas parceiras e, quando isso acontece, recebemos uma pequena comissao, sem custo adicional para voce. Uma forma simples de apoiar nosso trabalho enquanto escolhe com confianca.",
+                  title: "Produtos Esotericos",
+                  body: [
+                    "Curadoria criteriosa",
+                    "Significado acima de modas",
+                    "Indicacoes conscientes",
+                    "Compra segura",
+                  ],
                 },
                 {
                   title: "Produtos Personalizados",
-                  body: "Os produtos personalizados com motivos esotéricos foram criados para quem deseja expressar símbolos, ideias e crenças de forma natural e estética. Camisetas, canecas e pôsteres transformam o universo simbólico em presença cotidiana, seja no vestir, no ambiente ou nos pequenos rituais do dia a dia. Cada peça carrega significado sem excessos, convidando à identificação e à reflexão. Uma maneira simples e autêntica de deixar que os símbolos falem por você.",
+                  body: [
+                    "Simbolos no cotidiano",
+                    "Design com significado",
+                    "Pecas para identidade",
+                    "Expressao autentica",
+                  ],
                 },
               ].map((item) => (
                 <article
@@ -277,7 +265,18 @@ export default async function Home() {
                   className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
                 >
                   <h3 className="font-display text-lg">{item.title}</h3>
-                  <p className="mt-2 text-sm text-ink/70">{item.body}</p>
+                  {Array.isArray(item.body) ? (
+                    <ul className="mt-2 space-y-1 text-sm text-ink/70">
+                      {item.body.map((line) => (
+                        <li key={line} className="flex items-start gap-2">
+                          <span className="mt-2 h-1.5 w-1.5 rounded-full bg-gold"></span>
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="mt-2 text-sm text-ink/70">{item.body}</p>
+                  )}
                   <a
                     href="#"
                     className="mt-4 inline-flex text-sm font-semibold text-wine hover:text-terracotta"
@@ -353,40 +352,69 @@ export default async function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-ink/10 bg-sand">
+      <footer className="border-t border-ink/10 bg-ink text-sand">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-4">
-          <div className="space-y-3 md:col-span-2">
+          <div className="space-y-3">
             <p className="font-display text-xl">Oraculista de Delfos</p>
-            <p className="text-sm text-ink/70">
+            <p className="text-sm text-sand/70">
               Tarot, cursos e produtos com acolhimento, metodo e respeito.
             </p>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/60">
-              Produtos
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              Servicos
             </p>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>Cursos</li>
+            <ul className="mt-3 space-y-2 text-sm text-sand/80">
               <li>Livros</li>
+              <li>Cursos</li>
               <li>Produtos</li>
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/60">
-              Conteudo
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              Redes sociais
             </p>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>Blog</li>
-              <li>Newsletter</li>
+            <ul className="mt-3 space-y-2 text-sm text-sand/80">
               <li>Instagram</li>
+              <li>Pinterest</li>
+              <li>Facebook</li>
+              <li>YouTube</li>
+              <li>TikTok</li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              Paginas
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-sand/80">
+              <li>Politicas</li>
+              <li>Termos de uso</li>
+              <li>Contato</li>
+              <li>FAQ</li>
+            </ul>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              Contato
+            </p>
+            <ul className="mt-3 space-y-2 text-sm text-sand/80">
+              <li>email@oraculistadedelfos.com.br</li>
+              <li>WhatsApp: (00) 00000-0000</li>
             </ul>
           </div>
         </div>
-        <div className="border-t border-ink/10 py-6 text-center text-xs text-ink/60">
+        <div className="border-t border-sand/20 py-6 text-center text-xs text-sand/70">
           (c) 2025 Oraculista de Delfos. Todos os direitos reservados.
         </div>
       </footer>
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
 
