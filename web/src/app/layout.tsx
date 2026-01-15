@@ -46,22 +46,22 @@ export default function RootLayout({
         className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
       >
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
-          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-stretch gap-4 px-6 py-2">
-            <div className="flex items-center justify-center py-1">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-4 py-1 md:grid-cols-[1fr_auto_1fr] md:px-6 2xl:max-w-7xl">
+            <div className="flex items-start justify-center pb-0">
               <img
                 src="/logodourado2.png"
                 alt="Oraculista de Delfos"
-                className="h-[70%] w-auto rounded-full border border-ink/20 object-contain"
+                className="h-1/2 w-auto rounded-full border border-ink/20 object-contain"
               />
             </div>
-            <div className="mx-auto flex h-full max-w-xl flex-col items-center gap-3 text-center">
-              <p className="font-display text-3xl leading-tight text-[#fddb8f] md:text-4xl">
+            <div className="mx-auto flex max-w-xl flex-col items-center gap-3 text-center">
+              <p className="font-display text-[2.6rem] leading-tight text-[#fddb8f] md:text-[3.15rem]">
                 Oraculista de Delfos
               </p>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white">
                 Esoterismo aplicado ao autoconhecimento
               </p>
-              <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold">
+              <nav className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold sm:text-sm">
                 <a href="#cursos" className="hover:text-wine">
                   Cursos
                 </a>
@@ -79,12 +79,19 @@ export default function RootLayout({
                 </Link>
               </nav>
             </div>
-            <div></div>
+            <div className="flex items-center justify-center md:justify-end">
+              <a
+                href="https://wa.me/5500000000000"
+                className="inline-flex items-center rounded-full bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-soft hover:bg-sand"
+              >
+                WhatsApp
+              </a>
+            </div>
           </div>
         </header>
         {children}
         <footer className="border-t border-ink/10 bg-ink text-sand">
-          <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-4">
+          <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-4 md:px-6 2xl:max-w-7xl">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
                 Servicos
