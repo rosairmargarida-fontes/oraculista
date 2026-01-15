@@ -46,22 +46,22 @@ export default function RootLayout({
         className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
       >
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
-          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-4">
-            <div className="flex items-center justify-center">
+          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-3">
+            <div className="flex items-center justify-center py-1">
               <img
                 src="/logodourado2.png"
                 alt="Oraculista de Delfos"
-                className="h-14 w-14 rounded-full border border-ink/20 object-cover md:h-16 md:w-16"
+                className="h-12 w-auto rounded-full border border-ink/20 object-cover md:h-14"
               />
             </div>
-            <div className="mx-auto max-w-xl text-center">
+            <div className="mx-auto flex h-full max-w-xl flex-col justify-between text-center">
               <p className="font-display text-3xl text-[#fddb8f] md:text-4xl">
                 Oraculista de Delfos
               </p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white">
                 Esoterismo aplicado ao autoconhecimento
               </p>
-              <nav className="mt-4 flex flex-wrap items-center justify-center gap-6 text-sm font-semibold">
+              <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold">
                 <a href="#cursos" className="hover:text-wine">
                   Cursos
                 </a>
