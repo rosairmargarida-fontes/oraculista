@@ -93,7 +93,7 @@ export default function RootLayout({
         <footer className="border-t border-ink/10 bg-ink text-sand">
           <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-4 md:px-6 2xl:max-w-7xl">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
                 Servicos
               </p>
               <ul className="mt-3 space-y-2 text-sm text-sand/80">
@@ -103,7 +103,7 @@ export default function RootLayout({
               </ul>
             </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
                 Redes sociais
               </p>
               <ul className="mt-3 space-y-2 text-sm text-sand/80">
@@ -115,7 +115,7 @@ export default function RootLayout({
               </ul>
             </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
                 Paginas
               </p>
               <ul className="mt-3 space-y-2 text-sm text-sand/80">
@@ -126,7 +126,7 @@ export default function RootLayout({
               </ul>
             </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-gold">
                 Contato
               </p>
               <ul className="mt-3 space-y-2 text-sm text-sand/80">
