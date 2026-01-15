@@ -46,16 +46,16 @@ export default function RootLayout({
         className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
       >
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
-          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-3">
+          <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-stretch gap-4 px-6 py-2">
             <div className="flex items-center justify-center py-1">
               <img
                 src="/logodourado2.png"
                 alt="Oraculista de Delfos"
-                className="h-12 w-auto rounded-full border border-ink/20 object-cover md:h-14"
+                className="h-[70%] w-auto rounded-full border border-ink/20 object-contain"
               />
             </div>
-            <div className="mx-auto flex h-full max-w-xl flex-col justify-between text-center">
-              <p className="font-display text-3xl text-[#fddb8f] md:text-4xl">
+            <div className="mx-auto flex h-full max-w-xl flex-col items-center gap-3 text-center">
+              <p className="font-display text-3xl leading-tight text-[#fddb8f] md:text-4xl">
                 Oraculista de Delfos
               </p>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white">
