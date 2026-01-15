@@ -352,55 +352,6 @@ export default async function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-ink/10 bg-ink text-sand">
-        <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-4">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
-              Servicos
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-sand/80">
-              <li>Livros</li>
-              <li>Cursos</li>
-              <li>Produtos</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
-              Redes sociais
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-sand/80">
-              <li>Instagram</li>
-              <li>Pinterest</li>
-              <li>Facebook</li>
-              <li>YouTube</li>
-              <li>TikTok</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
-              Paginas
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-sand/80">
-              <li>Politicas</li>
-              <li>Termos de uso</li>
-              <li>Contato</li>
-              <li>FAQ</li>
-            </ul>
-          </div>
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
-              Contato
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-sand/80">
-              <li>email@oraculistadedelfos.com.br</li>
-              <li>WhatsApp: (00) 00000-0000</li>
-            </ul>
-          </div>
-        </div>
-        <div className="border-t border-sand/20 py-6 text-center text-xs text-sand/70">
-          (c) 2025 Oraculista de Delfos. Todos os direitos reservados.
-        </div>
-      </footer>
     </div>
   );
 }

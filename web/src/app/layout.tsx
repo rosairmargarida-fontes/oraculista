@@ -47,42 +47,91 @@ export default function RootLayout({
       >
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
           <div className="mx-auto grid max-w-6xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-6 py-4">
-            <div></div>
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-3">
-                <img
-                  src="/logodourado2.png"
-                  alt="Oraculista de Delfos"
-                  className="h-16 w-16 rounded-full border border-ink/20 object-cover md:h-20 md:w-20"
-                />
-                <p className="font-display text-2xl md:text-3xl text-[#fddb8f]">
-                  Oraculista de Delfos
-                </p>
-              </div>
-              <p className="text-xs uppercase tracking-[0.3em] text-white font-semibold">
+            <div className="flex items-center justify-center">
+              <img
+                src="/logodourado2.png"
+                alt="Oraculista de Delfos"
+                className="h-14 w-14 rounded-full border border-ink/20 object-cover md:h-16 md:w-16"
+              />
+            </div>
+            <div className="mx-auto max-w-xl text-center">
+              <p className="font-display text-3xl text-[#fddb8f] md:text-4xl">
+                Oraculista de Delfos
+              </p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.3em] text-white">
                 Esoterismo aplicado ao autoconhecimento
               </p>
+              <nav className="mt-4 flex flex-wrap items-center justify-center gap-6 text-sm font-semibold">
+                <a href="#cursos" className="hover:text-wine">
+                  Cursos
+                </a>
+                <a href="#produtos" className="hover:text-wine">
+                  Produtos
+                </a>
+                <Link href="/loja" className="hover:text-wine">
+                  Loja
+                </Link>
+                <Link href="/quem-somos" className="hover:text-wine">
+                  Quem Somos
+                </Link>
+                <Link href="/blog" className="hover:text-wine">
+                  Blog
+                </Link>
+              </nav>
             </div>
-            <nav className="flex flex-wrap items-center justify-end gap-6 text-sm font-semibold">
-              <a href="#cursos" className="hover:text-wine">
-                Cursos
-              </a>
-              <a href="#produtos" className="hover:text-wine">
-                Produtos
-              </a>
-              <Link href="/loja" className="hover:text-wine">
-                Loja
-              </Link>
-              <Link href="/quem-somos" className="hover:text-wine">
-                Quem Somos
-              </Link>
-              <Link href="/blog" className="hover:text-wine">
-                Blog
-              </Link>
-            </nav>
+            <div></div>
           </div>
         </header>
         {children}
+        <footer className="border-t border-ink/10 bg-ink text-sand">
+          <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+                Servicos
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-sand/80">
+                <li>Livros</li>
+                <li>Cursos</li>
+                <li>Produtos</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+                Redes sociais
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-sand/80">
+                <li>Instagram</li>
+                <li>Pinterest</li>
+                <li>Facebook</li>
+                <li>YouTube</li>
+                <li>TikTok</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+                Paginas
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-sand/80">
+                <li>Politicas</li>
+                <li>Termos de uso</li>
+                <li>Contato</li>
+                <li>FAQ</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+                Contato
+              </p>
+              <ul className="mt-3 space-y-2 text-sm text-sand/80">
+                <li>email@oraculistadedelfos.com.br</li>
+                <li>WhatsApp: (00) 00000-0000</li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-sand/20 py-6 text-center text-xs text-sand/70">
+            (c) 2025 Oraculista de Delfos. Todos os direitos reservados.
+          </div>
+        </footer>
       </body>
     </html>
   );
