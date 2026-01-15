@@ -354,12 +354,6 @@ export default async function Home() {
 
       <footer className="border-t border-ink/10 bg-ink text-sand">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 py-10 md:grid-cols-4">
-          <div className="space-y-3">
-            <p className="font-display text-xl">Oraculista de Delfos</p>
-            <p className="text-sm text-sand/70">
-              Tarot, cursos e produtos com acolhimento, metodo e respeito.
-            </p>
-          </div>
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
               Servicos
@@ -392,7 +386,9 @@ export default async function Home() {
               <li>Contato</li>
               <li>FAQ</li>
             </ul>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sand/70">
               Contato
             </p>
             <ul className="mt-3 space-y-2 text-sm text-sand/80">
