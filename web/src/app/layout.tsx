@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   title: "Oraculista de Delfos",
   description:
     "Conhecimento esotérico aplicado ao autoconhecimento, com cursos, estudos e conteúdos simbólicos.",
+  icons: {
+    icon: [
+      { url: "/logodourado2.ico" },
+      { url: "/logodourado2.png" },
+    ],
+  },
   metadataBase: new URL("https://oraculistadedelfos.com.br"),
   openGraph: {
     title: "Oraculista de Delfos",
@@ -46,7 +52,7 @@ export default function RootLayout({
         className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
       >
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
-          <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-3 px-4 py-1 md:grid-cols-[1fr_auto_1fr] md:px-6 2xl:max-w-7xl">
+          <div className="mx-auto grid max-w-3xl grid-cols-1 items-center gap-3 px-3 py-1 md:grid-cols-[1fr_auto_1fr] md:px-6 2xl:max-w-3xl">
             <div className="flex items-start justify-center pb-0">
               <img
                 src="/logodourado2.png"
@@ -62,12 +68,15 @@ export default function RootLayout({
                 Esoterismo aplicado ao autoconhecimento
               </p>
               <nav className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold sm:text-sm">
+                <Link href="/" className="hover:text-wine">
+                  Home
+                </Link>
                 <a href="#cursos" className="hover:text-wine">
                   Cursos
                 </a>
-                <a href="#produtos" className="hover:text-wine">
+                <Link href="/loja" className="hover:text-wine">
                   Produtos
-                </a>
+                </Link>
                 <Link href="/loja" className="hover:text-wine">
                   Loja
                 </Link>
@@ -143,3 +152,4 @@ export default function RootLayout({
     </html>
   );
 }
+

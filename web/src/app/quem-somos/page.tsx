@@ -26,8 +26,8 @@ export default function QuemSomosPage() {
         <section className="grid gap-10 md:grid-cols-[1fr_1.1fr]">
           <div className="rounded-3xl border border-ink/10 bg-paper p-4 shadow-soft">
             <img
-              src="/ElianeMelissa.png"
-              alt="Eliane Melissa"
+              src="/Quemsomos.jpg"
+              alt="Quem somos"
               className="h-full w-full rounded-2xl object-cover"
             />
           </div>

@@ -42,7 +42,10 @@ const modules = [
 const bundles = [
   {
     title: "Pacote Essencial - Base e Clareza",
-    includes: "Inclui: Modulo 1 + Modulo 2",
+    includes: [
+      "Modulo 1 - O Chamado do Louco",
+      "Modulo 2 - Os Arcanos Menores: A Vida em Movimento",
+    ],
     price: "R$ 197",
     anchor: "R$ 222",
     note: "Voce economiza e constroi base + vida pratica.",
@@ -50,7 +53,11 @@ const bundles = [
   },
   {
     title: "Pacote Profundo - Interpretacao e Metodo",
-    includes: "Inclui: Modulo 1 + Modulo 2 + Modulo 3",
+    includes: [
+      "Modulo 1 - O Chamado do Louco",
+      "Modulo 2 - Os Arcanos Menores: A Vida em Movimento",
+      "Modulo 3 - Leitura Relacional e Binariedade Simbolica",
+    ],
     price: "R$ 297",
     anchor: "R$ 369",
     note: "Clareza simbolica + leitura do cotidiano + interpretacao por relacao.",
@@ -58,7 +65,12 @@ const bundles = [
   },
   {
     title: "Pacote Formacao - Leitura Completa e Etica",
-    includes: "Inclui: Modulo 1 + Modulo 2 + Modulo 3 + Modulo 4",
+    includes: [
+      "Modulo 1 - O Chamado do Louco",
+      "Modulo 2 - Os Arcanos Menores: A Vida em Movimento",
+      "Modulo 3 - Leitura Relacional e Binariedade Simbolica",
+      "Modulo 4 - A Arte da Leitura: Escuta, Clareza e Conducao Etica",
+    ],
     price: "R$ 397",
     anchor: "R$ 566",
     note: "A trilha completa: base, aplicacao, profundidade e conducao etica.",
@@ -111,6 +123,24 @@ const faqs = [
 export default function ModulosPage() {
   return (
     <div className="bg-sand text-ink">
+      <header className="border-b border-ink/10 bg-sand/90">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
+          <div>
+            <p className="text-xs uppercase tracking-[0.35em] text-wine/70">
+              Modulos
+            </p>
+            <h1 className="font-display text-3xl text-ink md:text-4xl">
+              Oraculista de Delfos
+            </h1>
+          </div>
+          <Link
+            href="/"
+            className="text-sm font-semibold text-wine hover:text-terracotta"
+          >
+            Voltar para a home
+          </Link>
+        </div>
+      </header>
       <main>
         <section className="section">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[1.1fr_0.9fr]">
@@ -133,6 +163,7 @@ export default function ModulosPage() {
                 <li>Conteudo direto ao ponto, sem excesso e sem confusao</li>
                 <li>Evolucao progressiva: compreensao simbolica + aplicacao pratica</li>
                 <li>Mais confianca nas leituras e mais clareza no seu processo</li>
+                <li>Acesso imediato. Estude no seu ritmo.</li>
               </ul>
               <div className="flex flex-wrap items-center gap-3">
                 <a
@@ -141,9 +172,6 @@ export default function ModulosPage() {
                 >
                   Quero escolher meu modulo agora
                 </a>
-                <span className="text-xs text-ink/60">
-                  Acesso imediato. Estude no seu ritmo.
-                </span>
               </div>
             </div>
             <div className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft">
@@ -205,12 +233,20 @@ export default function ModulosPage() {
               {bundles.map((bundle) => (
                 <article
                   key={bundle.title}
-                  className="rounded-3xl border border-ink/20 bg-paper p-6 shadow-[0_18px_40px_rgba(15,59,102,5.12)]"
+                  className="flex h-full flex-col rounded-3xl border border-ink/20 bg-paper p-6 shadow-[0_18px_40px_rgba(15,59,102,5.12)]"
                 >
                   <h3 className="font-display text-xl text-ink">
                     {bundle.title}
                   </h3>
-                  <p className="mt-2 text-sm text-ink/70">{bundle.includes}</p>
+                  <p className="mt-2 text-sm text-ink/70">Inclui:</p>
+                  <ul className="mt-2 space-y-1 text-sm text-ink/70">
+                    {bundle.includes.map((line) => (
+                      <li key={line} className="flex items-start gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-wine"></span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <p className="mt-3 text-sm text-ink/60 line-through">
                     {bundle.anchor}
                   </p>
@@ -220,7 +256,7 @@ export default function ModulosPage() {
                   <p className="mt-3 text-sm text-ink/70">{bundle.note}</p>
                   <a
                     href="#"
-                    className="mt-5 inline-flex text-sm font-semibold text-wine hover:text-terracotta"
+                    className="mt-auto inline-flex text-sm font-semibold text-wine hover:text-terracotta"
                   >
                     {bundle.cta}
                   </a>

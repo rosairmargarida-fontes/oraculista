@@ -40,7 +40,7 @@ export default async function Home() {
     <div className="bg-sand text-ink">
       <main>
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-glow opacity-60"></div>
+          <div className="pointer-events-none absolute inset-0 bg-glow opacity-60"></div>
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:py-28">
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-wine/80">

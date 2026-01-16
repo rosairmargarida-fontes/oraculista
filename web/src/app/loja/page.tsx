@@ -1,37 +1,45 @@
-﻿const productGroups = [
+const products = [
   {
-    title: "Cursos Modulares",
+    name: "Livro Didatico de Taro",
     description:
-      "Os cursos do Oraculista de Delfos foram organizados em modulos independentes para tornar o aprendizado mais acessivel, flexivel e alinhado as necessidades de cada pessoa.",
-    items: [
-      "Modulo 1 - O Chamado do Louco",
-      "Modulo 2 - A Vida em Movimento",
-      "Modulo 3 - As Quatro Forcas",
-    ],
+      "Fundamentos organizados para estudo diario, com estrutura clara, exemplos praticos e consulta rapida.",
+    image: "/oraculista-logo.jpg",
+    cta: "Quero garantir meu exemplar agora",
   },
   {
-    title: "Livros didaticos",
+    name: "Cartas de Taro para Colorir",
     description:
-      "Livro didatico como apoio aos cursos, com fundamentos e consulta rapida. Disponivel em PDF e versao fisica.",
-    items: ["Livro didatico", "Caderno de exercicios", "Guia rapido"],
+      "Aprofunde a conexao com os simbolos, treine memoria visual e transforme o estudo em ritual criativo.",
+    image: "/capaoraculistadelfos.jpg",
+    cta: "Quero meu kit para colorir hoje",
   },
   {
-    title: "Tarot para colorir",
+    name: "Curso Modulo 1 - O Chamado do Louco",
     description:
-      "Colorir aprofunda o estudo e a conexao com os simbolos. Ideal para quem aprende pela experiencia visual.",
-    items: ["Arcanos Maiores", "Arcanos Menores", "Colecao completa"],
+      "Comece pelo essencial com uma trilha guiada, didatica e progressiva para construir base solida.",
+    image: "/logooraculista.png",
+    cta: "Quero iniciar minha jornada agora",
   },
   {
-    title: "Produtos EsotÃ©ricos",
+    name: "Curso Modulo 2 - Os Arcanos Menores",
     description:
-      "Curadoria de itens esotericos com criterio e afinidade simbolica. Compras em lojas parceiras, com apoio ao projeto.",
-    items: ["Velas ritualisticas", "Baralhos especiais", "Cristais"],
+      "Leitura do cotidiano, trabalho e relacoes com clareza. Expanda sua interpretacao com metodo.",
+    image: "/logomagenta.png",
+    cta: "Quero avancar para o Modulo 2",
   },
   {
-    title: "Produtos Personalizados",
+    name: "Produtos Esotericos Selecionados",
     description:
-      "Camisetas, canecas e posters com motivos simbolicos para o dia a dia. Uma forma simples de expressar identidade e significado.",
-    items: ["Camisetas", "Canecas", "Cadernos"],
+      "Curadoria de itens simbolicos com criterio e afinidade. Escolhas conscientes e alinhadas ao estudo.",
+    image: "/oraculista-logo.png",
+    cta: "Quero ver os itens recomendados",
+  },
+  {
+    name: "Produtos Personalizados",
+    description:
+      "Camisetas, canecas e posters para levar os simbolos ao dia a dia com identidade e significado.",
+    image: "/ORACULISTADEDELFOS.png",
+    cta: "Quero escolher meu favorito agora",
   },
 ];
 
@@ -58,34 +66,38 @@ export default function LojaPage() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-6 md:grid-cols-2">
-          {productGroups.map((group) => (
-            <section
-              key={group.title}
-              className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {products.map((product) => (
+            <article
+              key={product.name}
+              className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-soft"
             >
-              <h2 className="font-display text-2xl text-ink">{group.title}</h2>
-              <p className="mt-2 text-sm text-ink/70">{group.description}</p>
-              <ul className="mt-4 space-y-2 text-sm text-ink/70">
-                {group.items.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-gold"></span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#"
-                className="mt-5 inline-flex text-sm font-semibold text-wine hover:text-terracotta"
-              >
-                Ver links disponiveis
-              </a>
-            </section>
+              <div className="h-48 w-full overflow-hidden">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="flex h-full flex-col p-6">
+                <h2 className="font-display text-xl text-ink">
+                  {product.name}
+                </h2>
+                <p className="mt-2 text-sm text-ink/70">
+                  {product.description}
+                </p>
+                <a
+                  href="#"
+                  className="mt-auto inline-flex text-sm font-semibold text-wine hover:text-terracotta"
+                >
+                  {product.cta}
+                </a>
+              </div>
+            </article>
           ))}
         </div>
       </main>
     </div>
   );
 }
-
-
