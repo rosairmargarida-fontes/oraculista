@@ -131,24 +131,22 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section id="depoimentos" className="section">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="rounded-[32px] border border-ink/15 bg-paper p-8 shadow-card">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/70">
-                Curso em destaque
-              </p>
-              <h2 className="font-display text-3xl text-ink">O Chamado do Louco</h2>
-              <p className="mt-3 text-sm text-ink/70">
-                Aprenda Tarot do zero com metodo e pratica.
-              </p>
-              <div className="mt-6 rounded-2xl border border-ink/10 bg-sand p-4">
-                <a
-                  href="#cursos"
-                  className="inline-flex rounded-full bg-ink px-5 py-2 text-sm font-semibold text-sand hover:bg-wine"
+            <h2 className="section-title">Depoimentos</h2>
+            <div className="mt-8 grid gap-6 md:grid-cols-3">
+              {[
+                "Aprendi a interpretar com muito mais clareza e seguranca.",
+                "O metodo me deu base e me ajudou a organizar as leituras.",
+                "Conteudo direto, pratico e profundo ao mesmo tempo.",
+              ].map((quote) => (
+                <article
+                  key={quote}
+                  className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
                 >
-                  Acessar Hotmart
-                </a>
-              </div>
+                  <p className="text-sm text-ink/70">\"{quote}\"</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -272,33 +270,6 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section id="modulo-1" className="section">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-4">
-              <h2 className="section-title">Modulo 1: O Chamado do Louco</h2>
-              <p className="section-lead">
-                Comece pelo essencial e construa uma base solida para interpretar
-                os Arcanos Maiores com clareza e metodo.
-              </p>
-              <a
-                href="/modulos"
-                className="inline-flex rounded-full bg-wine px-6 py-3 text-sm font-semibold text-sand shadow-soft hover:bg-terracotta"
-              >
-                Conhecer o Modulo 1
-              </a>
-            </div>
-            <div className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft">
-              <h3 className="font-display text-2xl text-ink">
-                Sua porta de entrada no Tarot
-              </h3>
-              <p className="mt-3 text-sm text-ink/70">
-                Linguagem simbolica, arquetipos e leitura aplicada para quem quer
-                aprender com estrutura e autonomia.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section id="indicacoes" className="section">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4">
@@ -487,52 +458,6 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section id="quem-somos" className="section bg-paper">
-          <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[1fr_1.1fr]">
-            <div className="rounded-3xl border border-ink/10 bg-sand p-4 shadow-soft">
-              <img
-                src="/Quemsomos.jpg"
-                alt="Nossa Proposta"
-                className="h-full w-full rounded-2xl object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="space-y-4">
-              <h2 className="section-title">Nossa Proposta</h2>
-              <p className="section-lead">
-                Oraculista de Delfos e um projeto dedicado ao Tarot como
-                linguagem simbolica do presente, com clareza e responsabilidade.
-              </p>
-              <Link
-                href="/quem-somos"
-                className="inline-flex text-sm font-semibold text-wine hover:text-terracotta"
-              >
-                Conhecer a historia
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        <section id="depoimentos" className="section">
-          <div className="mx-auto max-w-6xl px-6">
-            <h2 className="section-title">Depoimentos</h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              {[
-                "Aprendi a interpretar com muito mais clareza e seguranca.",
-                "O metodo me deu base e me ajudou a organizar as leituras.",
-                "Conteudo direto, pratico e profundo ao mesmo tempo.",
-              ].map((quote) => (
-                <article
-                  key={quote}
-                  className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
-                >
-                  <p className="text-sm text-ink/70">"{quote}"</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section id="blog" className="section">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4">
@@ -625,7 +550,3 @@ export default async function Home() {
     </div>
   );
 }
-
-
-
-
