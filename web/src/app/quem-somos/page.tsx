@@ -7,7 +7,7 @@ export default function QuemSomosPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-wine/70">
-              Quem somos
+              Nossa Proposta
             </p>
             <h1 className="font-display text-3xl text-ink md:text-4xl">
               Oraculista de Delfos
@@ -27,12 +27,12 @@ export default function QuemSomosPage() {
           <div className="rounded-3xl border border-ink/10 bg-paper p-4 shadow-soft">
             <img
               src="/Quemsomos.jpg"
-              alt="Quem somos"
+              alt="Nossa Proposta"
               className="h-full w-full rounded-2xl object-cover"
             />
           </div>
           <div className="space-y-5 text-sm text-ink/80">
-            <h2 className="font-display text-2xl text-ink">Quem Somos</h2>
+            <h2 className="font-display text-2xl text-ink">Nossa Proposta</h2>
             <p>
               Oraculista de Delfos e um projeto dedicado ao Tarot e a Astrologia
               como linguagens simbolicas do presente, voltado ao

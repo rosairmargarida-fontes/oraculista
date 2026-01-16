@@ -44,54 +44,57 @@ export default async function Home() {
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:py-28">
             <div className="space-y-6">
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-wine/80">
-                Escola de simbolismo e autoconhecimento
+                Oraculista de Delfos
               </p>
               <h1 className="font-display text-4xl leading-tight text-ink md:text-5xl">
-                Tarot e autoconhecimento para decisoes mais claras.
+                Ensino esoterico com clareza, metodo e consciencia.
               </h1>
               <p className="text-base text-ink/80 md:text-lg">
-                Cursos e conteudo para quem busca se conhecer e evoluir com
-                metodo.
+                Um espaco dedicado ao estudo do simbolico como linguagem de
+                compreensao da vida, dos ciclos e dos processos internos - sem
+                excessos, sem confusao.
               </p>
+              <p className="text-sm text-ink/70">
+                O Oraculista de Delfos reune conteudos, estudos e cursos que
+                tratam o esoterico com seriedade, profundidade e organizacao.
+                Aqui, simbolos nao sao respostas prontas. Sao ferramentas de
+                entendimento.
+              </p>
+              <ul className="grid gap-2 text-sm text-ink/80">
+                <li>Abordagem simbolica clara e estruturada</li>
+                <li>Estudo consciente, sem misticismo confuso</li>
+                <li>Conteudos organizados para diferentes momentos da jornada</li>
+                <li>Autonomia para aprender no seu ritmo</li>
+              </ul>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="#cursos"
+                  href="#quem-somos"
                   className="rounded-full bg-wine px-6 py-3 text-sm font-semibold text-sand shadow-soft hover:bg-terracotta"
                 >
-                  Ver cursos
+                  Conhecer o Oraculista de Delfos
                 </a>
                 <a
-                  href="https://wa.me/5500000000000"
+                  href="/cursos"
                   className="rounded-full border border-ink/30 px-6 py-3 text-sm font-semibold text-ink hover:border-wine hover:text-wine"
                 >
-                  Falar no WhatsApp
+                  Explorar os cursos
                 </a>
               </div>
-              <div className="flex flex-wrap gap-3 text-xs font-semibold text-ink/70">
-                <span className="rounded-full border border-ink/20 bg-paper px-3 py-1">
-                  Pagamento seguro (Hotmart)
-                </span>
-              </div>
+              <p className="text-xs font-semibold text-ink/70">
+                Estudo progressivo - Linguagem acessivel - Consciencia e metodo
+              </p>
             </div>
-            <div className="rounded-[32px] border border-ink/15 bg-paper p-8 shadow-card">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/70">
-                Curso em destaque
-              </p>
-              <h2 className="font-display text-3xl text-ink">O Chamado do Louco</h2>
-              <p className="mt-3 text-sm text-ink/70">
-                Aprenda Tarot do zero com metodo e pratica.
-              </p>
-              <div className="mt-6 rounded-2xl border border-ink/10 bg-sand p-4">
-                <a
-                  href="#cursos"
-                  className="inline-flex rounded-full bg-ink px-5 py-2 text-sm font-semibold text-sand hover:bg-wine"
-                >
-                  Acessar Hotmart
-                </a>
-              </div>
+            <div className="overflow-hidden rounded-[32px] border border-ink/15 bg-paper shadow-card">
+              <img
+                src="/Quemsomos.jpg"
+                alt="Oraculista de Delfos"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
+
         <section className="section">
           <div className="mx-auto max-w-6xl px-6">
             <div className="space-y-3">
@@ -128,12 +131,34 @@ export default async function Home() {
           </div>
         </section>
 
+        <section className="section">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="rounded-[32px] border border-ink/15 bg-paper p-8 shadow-card">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-ink/70">
+                Curso em destaque
+              </p>
+              <h2 className="font-display text-3xl text-ink">O Chamado do Louco</h2>
+              <p className="mt-3 text-sm text-ink/70">
+                Aprenda Tarot do zero com metodo e pratica.
+              </p>
+              <div className="mt-6 rounded-2xl border border-ink/10 bg-sand p-4">
+                <a
+                  href="#cursos"
+                  className="inline-flex rounded-full bg-ink px-5 py-2 text-sm font-semibold text-sand hover:bg-wine"
+                >
+                  Acessar Hotmart
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="cursos" className="section bg-ink text-sand">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-6">
               <div className="space-y-3">
                 <h2 className="font-display text-3xl md:text-4xl">
-                  Módulos Disponíveis
+                  Cursos em destaque
                 </h2>
                 <p className="text-sand/80">
                   Os cursos do Oraculista de Delfos foram organizados em
@@ -167,13 +192,46 @@ export default async function Home() {
                 Ver todos os cursos
               </a>
             </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 overflow-hidden rounded-3xl border border-sand/20 bg-sand/5 md:grid md:grid-cols-[1.1fr_0.9fr]">
+              <div className="p-6 md:p-8">
+                <p className="text-xs uppercase tracking-[0.3em] text-gold">
+                  Modulo em destaque
+                </p>
+                <h3 className="mt-3 font-display text-3xl">
+                  O Chamado do Louco
+                </h3>
+                <p className="mt-2 text-sm font-semibold text-sand/80">
+                  Sua porta de entrada no Tarot
+                </p>
+                <p className="mt-3 text-sm text-sand/70">
+                  Comece pelo essencial e construa uma base solida para
+                  interpretar os Arcanos Maiores com clareza e seguranca.
+                  Aprenda o Tarot como linguagem simbolica, compreendendo
+                  arquetipos e significados de forma estruturada e aplicada a
+                  vida real. Um estudo pensado para quem busca metodo, autonomia
+                  e entendimento profundo do Tarot como expressao da experiencia
+                  humana.
+                </p>
+                <p className="mt-4 text-lg font-semibold text-gold">R$ 95</p>
+                <a
+                  href="#"
+                  className="mt-4 inline-flex text-sm font-semibold text-gold hover:text-sand"
+                >
+                  Ir para a Hotmart
+                </a>
+              </div>
+              <div className="h-64 md:h-full">
+                <img
+                  src="/Olouco.png"
+                  alt="O Chamado do Louco"
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-6 md:grid-cols-3">
               {[
-                {
-                  title: "O Chamado do Louco",
-                  price: "R$ 95",
-                  body: "Apresenta os 22 Arcanos Maiores como uma jornada simbolica do desenvolvimento humano, integrando significado das cartas, ordem tradicional e aplicacao na vida pratica.",
-                },
                 {
                   title: "Os Arcanos Menores: A Vida em Movimento",
                   price: "R$ 127",
@@ -434,13 +492,13 @@ export default async function Home() {
             <div className="rounded-3xl border border-ink/10 bg-sand p-4 shadow-soft">
               <img
                 src="/Quemsomos.jpg"
-                alt="Quem somos"
+                alt="Nossa Proposta"
                 className="h-full w-full rounded-2xl object-cover"
                 loading="lazy"
               />
             </div>
             <div className="space-y-4">
-              <h2 className="section-title">Quem somos</h2>
+              <h2 className="section-title">Nossa Proposta</h2>
               <p className="section-lead">
                 Oraculista de Delfos e um projeto dedicado ao Tarot como
                 linguagem simbolica do presente, com clareza e responsabilidade.
@@ -567,12 +625,6 @@ export default async function Home() {
     </div>
   );
 }
-
-
-
-
-
-
 
 
 
