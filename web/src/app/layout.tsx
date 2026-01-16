@@ -68,20 +68,20 @@ export default function RootLayout({
                 Esoterismo aplicado ao autoconhecimento
               </p>
               <nav className="flex flex-wrap items-center justify-center gap-6 text-xs font-semibold sm:text-sm">
-                <Link href="/" className="hover:text-wine">
-                  Home
-                </Link>
-                <a href="#cursos" className="hover:text-wine">
-                  Cursos
-                </a>
-                <Link href="/loja" className="hover:text-wine">
-                  Produtos
-                </Link>
-                <Link href="/loja" className="hover:text-wine">
-                  Loja
-                </Link>
                 <Link href="/quem-somos" className="hover:text-wine">
-                  Quem Somos
+                  Sobre
+                </Link>
+                <Link href="/cursos" className="hover:text-wine">
+                  Cursos
+                </Link>
+                <Link href="/loja" className="hover:text-wine">
+                  Indicacoes
+                </Link>
+                <Link href="/livros" className="hover:text-wine">
+                  Livros
+                </Link>
+                <Link href="/personalizados" className="hover:text-wine">
+                  Personalizados
                 </Link>
                 <Link href="/blog" className="hover:text-wine">
                   Blog
@@ -93,7 +93,7 @@ export default function RootLayout({
                 href="https://wa.me/5500000000000"
                 className="inline-flex items-center rounded-full bg-gold px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-ink shadow-soft hover:bg-sand"
               >
-                WhatsApp
+                Falar no WhatsApp
               </a>
             </div>
           </div>
@@ -152,4 +152,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -1,63 +1,36 @@
-const products = [
+const books = [
   {
-    name: "Baralho de Tarot Classico",
+    title: "Tarot: Fundamentos e Simbolos",
     description:
-      "Cartas resistentes, leitura confortavel e arte simbolica tradicional.",
+      "Guia pratico para compreender os Arcanos Maiores e aplicar o simbolismo no dia a dia.",
     image: "/oraculista-logo.jpg",
-    cta: "Comprar agora",
   },
   {
-    name: "Velas Ritualisticas",
+    title: "Numerologia e Autoconhecimento",
     description:
-      "Velas tematicas para intencoes, focos e rituais pessoais.",
-    image: "/capaoraculistadelfos.jpg",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Livro de Simbolismo Esoterico",
-    description:
-      "Referencia visual e conceitual para aprofundar estudos e leituras.",
-    image: "/logooraculista.png",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Kit de Cristais",
-    description:
-      "Selecao equilibrada para praticas de alinhamento e meditacao.",
-    image: "/logomagenta.png",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Incensos Naturais",
-    description:
-      "Aromas suaves para criar atmosfera e concentracao.",
-    image: "/oraculista-logo.png",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Caderno de Estudos Esotericos",
-    description:
-      "Espaco organizado para anotacoes, tiragens e reflexoes.",
+      "Leitura numerica com foco em ciclos pessoais, escolhas conscientes e clareza de caminho.",
     image: "/ORACULISTADEDELFOS.png",
-    cta: "Comprar agora",
+  },
+  {
+    title: "Astrologia Essencial",
+    description:
+      "Introducao ao mapa astral com linguagem acessivel e aplicacao pratica.",
+    image: "/logooraculista.png",
   },
 ];
 
-export default function LojaPage() {
+export default function LivrosPage() {
   return (
     <div className="bg-sand text-ink">
       <header className="border-b border-ink/10 bg-sand/90">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-wine/70">
-              Indicacoes
+              Livros
             </p>
             <h1 className="font-display text-3xl text-ink md:text-4xl">
-              Produtos indicados de lojas parceiras
+              Livros da autora
             </h1>
-            <p className="mt-2 text-sm text-ink/70">
-              Curadoria com links afiliados, atualizada regularmente.
-            </p>
           </div>
           <a
             href="/"
@@ -70,31 +43,29 @@ export default function LojaPage() {
 
       <main className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {products.map((product) => (
+          {books.map((book) => (
             <article
-              key={product.name}
+              key={book.title}
               className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-soft"
             >
               <div className="h-48 w-full overflow-hidden">
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={book.image}
+                  alt={book.title}
                   className="h-full w-full object-cover"
                   loading="lazy"
                 />
               </div>
               <div className="flex h-full flex-col p-6">
-                <h2 className="font-display text-xl text-ink">
-                  {product.name}
-                </h2>
+                <h2 className="font-display text-xl text-ink">{book.title}</h2>
                 <p className="mt-2 text-sm text-ink/70">
-                  {product.description}
+                  {book.description}
                 </p>
                 <a
                   href="#"
                   className="mt-auto inline-flex text-sm font-semibold text-wine hover:text-terracotta"
                 >
-                  {product.cta}
+                  Comprar agora
                 </a>
               </div>
             </article>

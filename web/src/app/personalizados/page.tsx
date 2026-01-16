@@ -1,63 +1,48 @@
 const products = [
   {
-    name: "Baralho de Tarot Classico",
+    name: "Caderno Personalizado",
     description:
-      "Cartas resistentes, leitura confortavel e arte simbolica tradicional.",
+      "Caderno tematico para anotacoes de estudos, tiragens e reflexoes.",
     image: "/oraculista-logo.jpg",
-    cta: "Comprar agora",
   },
   {
-    name: "Velas Ritualisticas",
+    name: "Poster Simbolico",
     description:
-      "Velas tematicas para intencoes, focos e rituais pessoais.",
+      "Arte decorativa para trazer simbolos e inspiracao ao seu espaco.",
     image: "/capaoraculistadelfos.jpg",
-    cta: "Comprar agora",
   },
   {
-    name: "Livro de Simbolismo Esoterico",
+    name: "Camiseta Tematica",
     description:
-      "Referencia visual e conceitual para aprofundar estudos e leituras.",
-    image: "/logooraculista.png",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Kit de Cristais",
-    description:
-      "Selecao equilibrada para praticas de alinhamento e meditacao.",
-    image: "/logomagenta.png",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Incensos Naturais",
-    description:
-      "Aromas suaves para criar atmosfera e concentracao.",
-    image: "/oraculista-logo.png",
-    cta: "Comprar agora",
-  },
-  {
-    name: "Caderno de Estudos Esotericos",
-    description:
-      "Espaco organizado para anotacoes, tiragens e reflexoes.",
+      "Estampa exclusiva com identidade simbolica do Oraculista de Delfos.",
     image: "/ORACULISTADEDELFOS.png",
-    cta: "Comprar agora",
+  },
+  {
+    name: "Caneca Ritual",
+    description:
+      "Para criar momentos de pausa e conexao com pequenos rituais diários.",
+    image: "/logooraculista.png",
+  },
+  {
+    name: "Bone Personalizado",
+    description:
+      "Acessorio com simbolos discretos para expressar identidade e estilo.",
+    image: "/oraculista-logo.png",
   },
 ];
 
-export default function LojaPage() {
+export default function PersonalizadosPage() {
   return (
     <div className="bg-sand text-ink">
       <header className="border-b border-ink/10 bg-sand/90">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-8">
           <div>
             <p className="text-xs uppercase tracking-[0.35em] text-wine/70">
-              Indicacoes
+              Personalizados
             </p>
             <h1 className="font-display text-3xl text-ink md:text-4xl">
-              Produtos indicados de lojas parceiras
+              Produtos personalizados
             </h1>
-            <p className="mt-2 text-sm text-ink/70">
-              Curadoria com links afiliados, atualizada regularmente.
-            </p>
           </div>
           <a
             href="/"
@@ -94,7 +79,7 @@ export default function LojaPage() {
                   href="#"
                   className="mt-auto inline-flex text-sm font-semibold text-wine hover:text-terracotta"
                 >
-                  {product.cta}
+                  Comprar agora
                 </a>
               </div>
             </article>
