@@ -15,7 +15,7 @@ const books = [
     title: "Astrologia Essencial",
     description:
       "Introducao ao mapa astral com linguagem acessivel e aplicacao pratica.",
-    image: "/logooraculista.png",
+    image: "/logodourado2.png",
   },
 ];
 

@@ -17,7 +17,7 @@ const products = [
     name: "Livro de Simbolismo Esoterico",
     description:
       "Referencia visual e conceitual para aprofundar estudos e leituras.",
-    image: "/logooraculista.png",
+    image: "/logodourado2.png",
     cta: "Comprar agora",
   },
   {

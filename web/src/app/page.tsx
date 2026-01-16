@@ -302,7 +302,7 @@ export default async function Home() {
                 {
                   title: "Incensos Naturais",
                   body: "Aromas suaves para foco e atmosfera.",
-                  image: "/logooraculista.png",
+                  image: "/logodourado2.png",
                 },
               ].map((item) => (
                 <article
@@ -428,7 +428,7 @@ export default async function Home() {
                 {
                   title: "Astrologia Essencial",
                   body: "Introducao ao mapa astral e seus fundamentos.",
-                  image: "/logooraculista.png",
+                  image: "/logodourado2.png",
                 },
               ].map((item) => (
                 <article

@@ -15,7 +15,7 @@ const courses = [
     name: "Curso de Mapa Astral",
     description:
       "Leitura do mapa natal com foco em identidade, potencialidades e caminhos de evolucao.",
-    image: "/logooraculista.png",
+    image: "/logodourado2.png",
   },
 ];
 

@@ -21,7 +21,7 @@ const products = [
     name: "Caneca Ritual",
     description:
       "Para criar momentos de pausa e conexao com pequenos rituais diários.",
-    image: "/logooraculista.png",
+    image: "/logodourado2.png",
   },
   {
     name: "Bone Personalizado",
