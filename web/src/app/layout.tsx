@@ -54,11 +54,13 @@ export default function RootLayout({
         <header className="sticky top-0 z-30 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero">
           <div className="mx-auto grid max-w-3xl grid-cols-1 items-center gap-3 px-3 py-1 md:grid-cols-[1fr_auto_1fr] md:px-6 2xl:max-w-3xl">
             <div className="flex items-start justify-center pb-0">
-              <img
-                src="/logodourado2.png"
-                alt="Oraculista de Delfos"
-                className="h-1/2 w-auto rounded-full border border-ink/20 object-contain"
-              />
+              <Link href="/">
+                <img
+                  src="/logodourado2.png"
+                  alt="Oraculista de Delfos"
+                  className="h-1/2 w-auto rounded-full border border-ink/20 object-contain"
+                />
+              </Link>
             </div>
             <div className="mx-auto flex max-w-xl flex-col items-center gap-3 text-center">
               <p className="font-display text-[2.6rem] leading-tight text-[#fddb8f] md:text-[3.15rem]">

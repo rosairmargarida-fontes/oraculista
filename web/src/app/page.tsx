@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { fetchPosts, getMediaUrl } from "@/lib/strapi";
 
 const fallbackPosts = [
@@ -95,7 +95,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section bg-paper">
           <div className="mx-auto max-w-6xl px-6">
             <div className="space-y-3">
               <h2 className="section-title">Por que estudar com a gente?</h2>
@@ -121,7 +121,7 @@ export default async function Home() {
               ].map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
+                  className="rounded-3xl border border-ink/20 bg-sand p-6 shadow-soft"
                 >
                   <h3 className="font-display text-lg">{item.title}</h3>
                   <p className="mt-2 text-sm text-ink/70">{item.body}</p>
@@ -131,7 +131,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="depoimentos" className="section">
+        <section id="depoimentos" className="section bg-sand">
           <div className="mx-auto max-w-6xl px-6">
             <h2 className="section-title">Depoimentos</h2>
             <div className="mt-8 grid gap-6 md:grid-cols-3">
@@ -142,7 +142,7 @@ export default async function Home() {
               ].map((quote) => (
                 <article
                   key={quote}
-                  className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
+                  className="rounded-3xl border border-ink/20 bg-paper p-6 shadow-soft"
                 >
                   <p className="text-sm text-ink/70">\"{quote}\"</p>
                 </article>
@@ -190,7 +190,7 @@ export default async function Home() {
                 Ver todos os cursos
               </a>
             </div>
-            <div className="mt-10 overflow-hidden rounded-3xl border border-sand/20 bg-sand/5 md:grid md:grid-cols-[1.1fr_0.9fr]">
+            <div className="mt-10 overflow-hidden rounded-3xl border border-sand/20 bg-sand/5 shadow-soft md:grid md:grid-cols-[1.1fr_0.9fr]">
               <div className="p-6 md:p-8">
                 <p className="text-xs uppercase tracking-[0.3em] text-gold">
                   Modulo em destaque
@@ -249,7 +249,7 @@ export default async function Home() {
               ].map((course) => (
                 <div
                   key={course.title}
-                  className="rounded-3xl border border-sand/20 bg-sand/5 p-6"
+                  className="rounded-3xl border border-sand/20 bg-sand/5 p-6 shadow-soft"
                 >
                   <p className="text-xs uppercase tracking-[0.3em] text-gold">
                     Modulo
@@ -270,7 +270,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section id="indicacoes" className="section">
+        <section id="indicacoes" className="section bg-paper">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4">
               <div>
@@ -307,7 +307,7 @@ export default async function Home() {
               ].map((item) => (
                 <article
                   key={item.title}
-                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-soft"
+                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/20 bg-sand shadow-soft"
                 >
                   <div className="h-40 w-full overflow-hidden">
                     <img
@@ -333,7 +333,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section id="personalizados" className="section bg-paper">
+        <section id="personalizados" className="section bg-sand">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4">
               <div>
@@ -370,7 +370,7 @@ export default async function Home() {
               ].map((item) => (
                 <article
                   key={item.title}
-                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-sand shadow-soft"
+                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/20 bg-paper shadow-soft"
                 >
                   <div className="h-40 w-full overflow-hidden">
                     <img
@@ -396,7 +396,7 @@ export default async function Home() {
           </div>
         </section>
 
-                <section id="livros" className="section">
+        <section id="livros" className="section bg-paper">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4">
               <div>
@@ -433,7 +433,7 @@ export default async function Home() {
               ].map((item) => (
                 <article
                   key={item.title}
-                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-soft"
+                  className="flex h-full flex-col overflow-hidden rounded-3xl border border-ink/20 bg-sand shadow-soft"
                 >
                   <div className="h-40 w-full overflow-hidden">
                     <img
@@ -458,7 +458,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
-        <section id="blog" className="section">
+        <section id="blog" className="section bg-sand">
           <div className="mx-auto max-w-6xl px-6">
             <div className="flex flex-col gap-4">
               <div>
@@ -490,10 +490,10 @@ export default async function Home() {
                 return (
                   <article
                     key={post.slug}
-                    className="rounded-3xl border border-ink/10 bg-paper p-6 shadow-soft"
+                    className="rounded-3xl border border-ink/20 bg-paper p-6 shadow-soft"
                   >
                     {coverUrl ? (
-                      <div className="mb-4 overflow-hidden rounded-2xl border border-ink/10">
+                      <div className="mb-4 overflow-hidden rounded-2xl border border-ink/20">
                         <img
                           src={coverUrl}
                           alt={post.title}
@@ -520,9 +520,9 @@ export default async function Home() {
           </div>
         </section>
       
-        <section id="contato" className="section">
+        <section id="contato" className="section bg-paper">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="rounded-3xl border border-ink/10 bg-ink p-8 text-center text-sand">
+            <div className="rounded-3xl border border-ink/20 bg-ink p-8 text-center text-sand">
               <h2 className="font-display text-3xl">
                 Pronta para comecar?
               </h2>
@@ -550,3 +550,4 @@ export default async function Home() {
     </div>
   );
 }
+

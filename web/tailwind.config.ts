@@ -17,8 +17,8 @@ const config: Config = {
         body: ["var(--font-body)", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 20px 45px -30px rgba(44, 42, 40, 0.5)",
-        card: "0 18px 40px -24px rgba(44, 42, 40, 0.45)",
+        soft: "0 24px 48px -16px rgba(15, 59, 102, 0.5)",
+        card: "0 30px 60px -16px rgba(15, 59, 102, 0.6)",
       },
       backgroundImage: {
         glow: "radial-gradient(circle at top, #f8f2e8, transparent 60%)",
