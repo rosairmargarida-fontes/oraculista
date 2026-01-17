@@ -1,5 +1,11 @@
 import Link from "next/link";
-import { fetchCategories, fetchPosts, fetchPostsByCategory, getMediaUrl } from "@/lib/strapi";
+import {
+  fetchCategories,
+  fetchPosts,
+  fetchPostsByCategory,
+  fetchPostsByCategoryId,
+  getMediaUrl,
+} from "@/lib/strapi";
 
 export const dynamic = "force-dynamic";
 
@@ -13,10 +19,15 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     ? rawCategory[0]
     : rawCategory;
   const categorySlug = activeCategory ? decodeURIComponent(activeCategory) : undefined;
-  const [categories, posts] = await Promise.all([
-    fetchCategories(),
-    categorySlug ? fetchPostsByCategory(categorySlug, 12) : fetchPosts(12),
-  ]);
+  const categories = await fetchCategories();
+  const matchedCategory = categorySlug
+    ? categories.find((category) => category.slug === categorySlug)
+    : undefined;
+  const posts = categorySlug
+    ? matchedCategory
+      ? await fetchPostsByCategoryId(matchedCategory.id, 12)
+      : await fetchPostsByCategory(categorySlug, 12)
+    : await fetchPosts(12);
 
   return (
     <div className="bg-sand text-ink">
@@ -94,6 +105,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
                 <p className="mt-2 text-sm text-ink/70">
                   {post.summary || "Sem resumo ainda."}
                 </p>
+                {post.category?.name ? (
+                  <p className="mt-2 text-[10px] uppercase tracking-[0.2em] text-ink/40">
+                    {post.category.name}
+                  </p>
+                ) : null}
                 <Link
                   href={`/blog/${post.slug}`}
                   className="mt-5 inline-flex text-sm font-semibold text-wine hover:text-terracotta"

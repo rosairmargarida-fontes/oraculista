@@ -101,6 +101,31 @@ export async function fetchPostsByCategory(
   }
 }
 
+export async function fetchPostsByCategoryId(
+  categoryId: number,
+  limit = 12
+): Promise<Post[]> {
+  const url = new URL("/api/posts", STRAPI_URL);
+  url.searchParams.set("sort", "publishedAt:desc");
+  url.searchParams.set("populate[cover]", "true");
+  url.searchParams.set("populate[image]", "true");
+  url.searchParams.set("populate[category]", "true");
+  url.searchParams.set("filters[category][id][$eq]", String(categoryId));
+  url.searchParams.set("pagination[pageSize]", String(limit));
+
+  try {
+    const res = await fetchWithFallback(url, { next: { revalidate: 60 } });
+    if (!res.ok) {
+      return [];
+    }
+
+    const json = (await res.json()) as StrapiResponse<Post>;
+    return (json.data ?? []).map((entry) => normalizeEntry(entry));
+  } catch {
+    return [];
+  }
+}
+
 export async function fetchCategories(): Promise<Category[]> {
   const url = new URL("/api/categories", STRAPI_URL);
   url.searchParams.set("fields[0]", "name");

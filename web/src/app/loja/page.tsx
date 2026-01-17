@@ -3,42 +3,42 @@ const products = [
     name: "Baralho de Tarot Classico",
     description:
       "Cartas resistentes, leitura confortavel e arte simbolica tradicional.",
-    image: "/oraculista-logo.jpg",
+    image: "/baralho.png",
     cta: "Comprar agora",
   },
   {
     name: "Velas Ritualisticas",
     description:
       "Velas tematicas para intencoes, focos e rituais pessoais.",
-    image: "/capaoraculistadelfos.jpg",
+    image: "/velas.png",
     cta: "Comprar agora",
   },
   {
     name: "Livro de Simbolismo Esoterico",
     description:
       "Referencia visual e conceitual para aprofundar estudos e leituras.",
-    image: "/logodourado2.png",
+    image: "/livros.png",
     cta: "Comprar agora",
   },
   {
     name: "Kit de Cristais",
     description:
       "Selecao equilibrada para praticas de alinhamento e meditacao.",
-    image: "/logomagenta.png",
+    image: "/cristais.png",
     cta: "Comprar agora",
   },
   {
     name: "Incensos Naturais",
     description:
       "Aromas suaves para criar atmosfera e concentracao.",
-    image: "/oraculista-logo.png",
+    image: "/incenso.png",
     cta: "Comprar agora",
   },
   {
     name: "Caderno de Estudos Esotericos",
     description:
       "Espaco organizado para anotacoes, tiragens e reflexoes.",
-    image: "/ORACULISTADEDELFOS.png",
+    image: "/Cadernos.png",
     cta: "Comprar agora",
   },
 ];
