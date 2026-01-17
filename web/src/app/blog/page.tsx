@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { fetchPosts, getMediaUrl } from "@/lib/strapi";
+import { fetchCategories, fetchPosts, fetchPostsByCategory, getMediaUrl } from "@/lib/strapi";
 
-export default async function BlogPage() {
-  const posts = await fetchPosts(12);
+export const dynamic = "force-dynamic";
+
+type BlogPageProps = {
+  searchParams?: { categoria?: string };
+};
+
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const rawCategory = searchParams?.categoria;
+  const activeCategory = Array.isArray(rawCategory)
+    ? rawCategory[0]
+    : rawCategory;
+  const categorySlug = activeCategory ? decodeURIComponent(activeCategory) : undefined;
+  const [categories, posts] = await Promise.all([
+    fetchCategories(),
+    categorySlug ? fetchPostsByCategory(categorySlug, 12) : fetchPosts(12),
+  ]);
 
   return (
     <div className="bg-sand text-ink">
@@ -26,6 +40,25 @@ export default async function BlogPage() {
       </header>
 
       <main className="mx-auto max-w-6xl px-6 py-12">
+        <nav className="mb-8 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.25em] text-ink/60">
+          <Link
+            href="/blog"
+            className={activeCategory ? "hover:text-wine" : "text-wine"}
+          >
+            Todos
+          </Link>
+          {categories.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/blog?categoria=${category.slug}`}
+              className={
+                activeCategory === category.slug ? "text-wine" : "hover:text-wine"
+              }
+            >
+              {category.name}
+            </Link>
+          ))}
+        </nav>
         {posts.length === 0 ? (
           <div className="rounded-3xl border border-ink/10 bg-paper p-8">
             <p className="text-sm text-ink/70">

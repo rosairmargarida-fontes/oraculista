@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { fetchPostBySlug, fetchPostSlugs, getMediaUrl } from "@/lib/strapi";
+import { fetchPostBySlug, fetchPostSlugs, fetchPosts, getMediaUrl } from "@/lib/strapi";
 import { marked } from "marked";
 
 type BlogPostPageProps = {
@@ -14,6 +14,9 @@ export async function generateStaticParams() {
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
   const post = await fetchPostBySlug(slug);
+  const suggestions = (await fetchPosts(4)).filter(
+    (item) => item.slug !== slug
+  );
 
   if (!post) {
     return (
@@ -73,6 +76,30 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           className="blog-content mt-10"
           dangerouslySetInnerHTML={{ __html: htmlBody }}
         />
+        {suggestions.length > 0 ? (
+          <section className="mt-16 border-t border-ink/10 pt-10">
+            <h2 className="font-display text-2xl">Leia tambem</h2>
+            <div className="mt-6 grid gap-6 md:grid-cols-3">
+              {suggestions.slice(0, 3).map((item) => (
+                <Link
+                  key={item.slug}
+                  href={`/blog/${item.slug}`}
+                  className="rounded-2xl border border-ink/10 bg-paper p-4 shadow-soft hover:border-ink/20"
+                >
+                  <p className="text-xs uppercase tracking-[0.25em] text-wine/70">
+                    Blog
+                  </p>
+                  <p className="mt-2 font-display text-lg text-ink">
+                    {item.title}
+                  </p>
+                  <p className="mt-2 text-sm text-ink/70">
+                    {item.summary || "Sem resumo ainda."}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        ) : null}
       </main>
     </div>
   );

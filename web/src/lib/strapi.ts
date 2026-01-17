@@ -23,8 +23,16 @@ export type Post = {
   authorName?: string;
   cover?: MediaPayload | null;
   image?: MediaPayload | null;
+  category?: Category | null;
   createdAt?: string;
   publishedAt?: string;
+};
+
+export type Category = {
+  id: number;
+  name: string;
+  slug: string;
+  description?: string;
 };
 
 type Media = {
@@ -52,6 +60,7 @@ export async function fetchPosts(limit = 6): Promise<Post[]> {
   url.searchParams.set("sort", "publishedAt:desc");
   url.searchParams.set("populate[cover]", "true");
   url.searchParams.set("populate[image]", "true");
+  url.searchParams.set("populate[category]", "true");
   url.searchParams.set("pagination[pageSize]", String(limit));
 
   try {
@@ -61,6 +70,51 @@ export async function fetchPosts(limit = 6): Promise<Post[]> {
     }
 
     const json = (await res.json()) as StrapiResponse<Post>;
+    return (json.data ?? []).map((entry) => normalizeEntry(entry));
+  } catch {
+    return [];
+  }
+}
+
+export async function fetchPostsByCategory(
+  categorySlug: string,
+  limit = 12
+): Promise<Post[]> {
+  const url = new URL("/api/posts", STRAPI_URL);
+  url.searchParams.set("sort", "publishedAt:desc");
+  url.searchParams.set("populate[cover]", "true");
+  url.searchParams.set("populate[image]", "true");
+  url.searchParams.set("populate[category]", "true");
+  url.searchParams.set("filters[category][slug][$eqi]", categorySlug);
+  url.searchParams.set("pagination[pageSize]", String(limit));
+
+  try {
+    const res = await fetchWithFallback(url, { next: { revalidate: 60 } });
+    if (!res.ok) {
+      return [];
+    }
+
+    const json = (await res.json()) as StrapiResponse<Post>;
+    return (json.data ?? []).map((entry) => normalizeEntry(entry));
+  } catch {
+    return [];
+  }
+}
+
+export async function fetchCategories(): Promise<Category[]> {
+  const url = new URL("/api/categories", STRAPI_URL);
+  url.searchParams.set("fields[0]", "name");
+  url.searchParams.set("fields[1]", "slug");
+  url.searchParams.set("sort", "name:asc");
+  url.searchParams.set("pagination[pageSize]", "200");
+
+  try {
+    const res = await fetchWithFallback(url, { next: { revalidate: 300 } });
+    if (!res.ok) {
+      return [];
+    }
+
+    const json = (await res.json()) as StrapiResponse<Category>;
     return (json.data ?? []).map((entry) => normalizeEntry(entry));
   } catch {
     return [];

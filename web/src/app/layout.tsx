@@ -51,25 +51,79 @@ export default function RootLayout({
       <body
         className={`${displayFont.variable} ${bodyFont.variable} antialiased`}
       >
-        <header className="border-b border-ink/10 bg-sand/90 backdrop-blur header-hero md:sticky md:top-0 md:z-30">
-          <div className="mx-auto grid max-w-3xl grid-cols-1 items-center gap-2 px-3 py-2 md:grid-cols-[1fr_auto_1fr] md:px-6 2xl:max-w-3xl">
-            <div className="flex items-start justify-center pb-0 md:justify-start">
+        <header className="relative z-40 border-b border-ink/10 bg-sand/90 backdrop-blur header-hero md:sticky md:top-0">
+          <div className="mx-auto flex max-w-3xl items-center justify-between px-3 py-2 md:hidden">
+            <Link href="/" className="flex items-center gap-2">
+              <img
+                src="/logodourado2.png"
+                alt="Oraculista de Delfos"
+                className="h-10 w-10 rounded-full border border-ink/20 object-cover"
+              />
+              <span className="text-base font-semibold text-white">
+                Oraculista de Delfos
+              </span>
+            </Link>
+            <div className="flex items-center gap-2">
+              <a
+                href="https://wa.me/5500000000000"
+                className="inline-flex items-center justify-center rounded-full bg-gold p-2 text-ink shadow-soft hover:bg-sand"
+                aria-label="Falar no WhatsApp"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4"
+                  fill="currentColor"
+                >
+                  <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.4 0 .02 5.38.02 12c0 2.1.55 4.16 1.6 5.98L0 24l6.24-1.64A11.9 11.9 0 0 0 12.02 24C18.64 24 24 18.62 24 12c0-3.2-1.25-6.2-3.48-8.52ZM12.02 22a9.9 9.9 0 0 1-5.06-1.4l-.36-.22-3.7.98.99-3.6-.24-.37A9.86 9.86 0 0 1 2 12C2 6.48 6.5 2 12.02 2c2.64 0 5.12 1.03 6.98 2.9A9.84 9.84 0 0 1 22 12c0 5.52-4.48 10-9.98 10Zm5.5-7.45c-.3-.15-1.75-.86-2.02-.96-.27-.1-.46-.15-.65.15-.2.3-.75.96-.92 1.16-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.41-1.5-.89-.8-1.49-1.8-1.66-2.1-.17-.3-.02-.46.13-.61.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.58-.48-.5-.65-.5h-.55c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45s1.06 2.85 1.2 3.05c.15.2 2.1 3.2 5.08 4.48.71.3 1.26.48 1.69.61.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35Z" />
+                </svg>
+              </a>
+              <details className="relative z-50">
+                <summary className="inline-flex items-center rounded-full border border-white/30 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
+                  Menu
+                </summary>
+                <div className="absolute right-0 z-50 mt-2 w-48 rounded-2xl border border-ink/20 bg-ink/95 p-3 text-xs font-semibold text-sand shadow-soft">
+                  <Link href="/quem-somos" className="block py-1 hover:text-gold">
+                    Sobre
+                  </Link>
+                  <Link href="/cursos" className="block py-1 hover:text-gold">
+                    Cursos
+                  </Link>
+                  <Link href="/loja" className="block py-1 hover:text-gold">
+                    Indicacoes
+                  </Link>
+                  <Link href="/livros" className="block py-1 hover:text-gold">
+                    Livros
+                  </Link>
+                  <Link href="/personalizados" className="block py-1 hover:text-gold">
+                    Personalizados
+                  </Link>
+                  <Link href="/blog" className="block py-1 hover:text-gold">
+                    Blog
+                  </Link>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <div className="mx-auto hidden max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-6 px-6 py-4 md:grid">
+            <div className="flex items-center justify-start">
               <Link href="/">
                 <img
                   src="/logodourado2.png"
                   alt="Oraculista de Delfos"
-                  className="h-12 w-auto rounded-full border border-ink/20 object-contain md:h-24"
+                  className="h-24 w-24 rounded-full border border-ink/20 object-cover"
                 />
               </Link>
             </div>
             <div className="mx-auto flex max-w-xl flex-col items-center gap-3 text-center">
-              <p className="font-display text-2xl leading-tight text-[#fddb8f] sm:text-3xl md:text-[3.15rem]">
+              <p className="font-display text-[3.15rem] leading-tight text-[#fddb8f]">
                 Oraculista de Delfos
               </p>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white sm:text-xs">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white">
                 Esoterismo aplicado ao autoconhecimento
               </p>
-              <nav className="hidden flex-wrap items-center justify-center gap-3 text-[10px] font-semibold sm:gap-5 sm:text-xs md:flex md:text-sm">
+              <nav className="flex flex-wrap items-center justify-center gap-6 text-sm font-semibold">
                 <Link href="/quem-somos" className="hover:text-wine">
                   Sobre
                 </Link>
@@ -89,33 +143,8 @@ export default function RootLayout({
                   Blog
                 </Link>
               </nav>
-              <details className="md:hidden">
-                <summary className="inline-flex items-center rounded-full border border-white/30 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
-                  Menu
-                </summary>
-                <div className="mt-3 grid gap-2 text-xs font-semibold">
-                  <Link href="/quem-somos" className="hover:text-wine">
-                    Sobre
-                  </Link>
-                  <Link href="/cursos" className="hover:text-wine">
-                    Cursos
-                  </Link>
-                  <Link href="/loja" className="hover:text-wine">
-                    Indicacoes
-                  </Link>
-                  <Link href="/livros" className="hover:text-wine">
-                    Livros
-                  </Link>
-                  <Link href="/personalizados" className="hover:text-wine">
-                    Personalizados
-                  </Link>
-                  <Link href="/blog" className="hover:text-wine">
-                    Blog
-                  </Link>
-                </div>
-              </details>
             </div>
-            <div className="flex items-center justify-center md:justify-end">
+            <div className="flex items-center justify-end">
               <a
                 href="https://wa.me/5500000000000"
                 className="inline-flex items-center justify-center rounded-full bg-gold p-2 text-ink shadow-soft hover:bg-sand"
@@ -124,7 +153,7 @@ export default function RootLayout({
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
-                  className="h-4 w-4"
+                  className="h-5 w-5"
                   fill="currentColor"
                 >
                   <path d="M20.52 3.48A11.86 11.86 0 0 0 12.02 0C5.4 0 .02 5.38.02 12c0 2.1.55 4.16 1.6 5.98L0 24l6.24-1.64A11.9 11.9 0 0 0 12.02 24C18.64 24 24 18.62 24 12c0-3.2-1.25-6.2-3.48-8.52ZM12.02 22a9.9 9.9 0 0 1-5.06-1.4l-.36-.22-3.7.98.99-3.6-.24-.37A9.86 9.86 0 0 1 2 12C2 6.48 6.5 2 12.02 2c2.64 0 5.12 1.03 6.98 2.9A9.84 9.84 0 0 1 22 12c0 5.52-4.48 10-9.98 10Zm5.5-7.45c-.3-.15-1.75-.86-2.02-.96-.27-.1-.46-.15-.65.15-.2.3-.75.96-.92 1.16-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.41-1.5-.89-.8-1.49-1.8-1.66-2.1-.17-.3-.02-.46.13-.61.14-.14.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.65-1.57-.9-2.15-.24-.58-.48-.5-.65-.5h-.55c-.2 0-.52.07-.79.37-.27.3-1.03 1-1.03 2.45s1.06 2.85 1.2 3.05c.15.2 2.1 3.2 5.08 4.48.71.3 1.26.48 1.69.61.71.23 1.36.2 1.87.12.57-.08 1.75-.71 2-1.4.25-.69.25-1.27.17-1.4-.07-.12-.27-.2-.57-.35Z" />
