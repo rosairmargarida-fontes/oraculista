@@ -3,7 +3,7 @@ const products = [
     name: "Baralho de Tarot Classico",
     description:
       "Cartas resistentes, leitura confortavel e arte simbolica tradicional.",
-    image: "/Cartastarot.png",
+    image: "/baralho.png",
     cta: "Comprar agora",
   },
   {
